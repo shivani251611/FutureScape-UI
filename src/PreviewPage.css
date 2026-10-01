@@ -1,0 +1,249 @@
+/* PreviewPage.css */
+
+.pv-page {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  overflow: hidden;
+  font-family: 'georgian', cursive;
+  color: #6B4A2E;
+  background: radial-gradient(120% 80% at 50% 0%, #FBEFC6 0%, #F7E8B6 100%);
+  padding: 52px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pv-page * { box-sizing: border-box; }
+
+.pv-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(180,150,80,0.08) 1px, transparent 1.4px);
+  background-size: 26px 26px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pv-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pv-eyebrow {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9A7B58;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.pv-h1 {
+  font-family: 'georgian', cursive;
+  font-weight: 400;
+  font-size: clamp(32px, 4.4vw, 50px);
+  line-height: 1.05;
+  margin: 0 0 14px;
+  color: #6B4A2E;
+  text-align: center;
+}
+
+.pv-sub {
+  font-style: italic;
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.55;
+  color: #9A7B58;
+  margin: 0 auto 30px;
+  max-width: 34em;
+  text-align: center;
+}
+
+/* two column grid */
+.pv-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 34px;
+  width: 100%;
+  align-items: start;
+}
+
+.pv-card {
+  background: rgba(255,255,255,0.55);
+  border: 1px solid #E4D49E;
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.pv-imgwrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
+.pv-img {
+  max-width: 100%;
+  max-height: 600px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(150,120,40,0.2);
+  object-fit: contain;
+}
+
+.pv-empty {
+  font-style: italic;
+  color: #9A7B58;
+}
+
+/* form */
+.pv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pv-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.pv-label {
+  font-family: 'georgian', cursive;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #6B4A2E;
+}
+
+.pv-input {
+  font-family: 'georgian', cursive;
+  font-size: 16px;
+  color: #6B4A2E;
+  background: #fffdf4;
+  border: 2px solid #E0CF96;
+  border-radius: 12px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.pv-input:focus {
+  border-color: #B27A52;
+}
+
+.pv-input::placeholder {
+  color: #bba880;
+}
+
+/* info box */
+.pv-infobox {
+  background: rgba(169,206,142,0.22);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-top: 4px;
+}
+
+.pv-infobox-title {
+  font-family: 'georgian', cursive;
+  font-size: 20px;
+  color: #2C5A36;
+  margin: 0 0 6px;
+}
+
+.pv-infobox-text {
+  font-family: 'georgian', cursive;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #7A8A6A;
+}
+
+/* nav - Run pipeline */
+.pv-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 38px;
+  width: 100%;
+}
+
+.pv-btn {
+  font-family: 'georgian', cursive;
+  font-size: 21px;
+  color: #fff;
+  background: #B27A52;
+  border: none;
+  padding: 11px 28px;
+  border-radius: 12px 14px 11px 13px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #9A6644;
+  transition: transform 0.12s, box-shadow 0.12s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pv-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #9A6644;
+}
+
+.pv-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #9A6644;
+}
+
+.pv-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: 0 6px 0 #9A6644;
+  transform: none;
+}
+
+/* Previous and Next links */
+.pv-prevnext {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 22px;
+}
+
+.pv-link {
+  font-family: 'georgian', cursive;
+  font-style: italic;
+  font-size: 16px;
+  color: #9A7B58;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  transition: color 0.15s;
+}
+
+.pv-link:hover {
+  color: #6B4A2E;
+}
+
+@media (max-width: 760px) {
+  .pv-grid { grid-template-columns: 1fr; }
+  .pv-row { grid-template-columns: 1fr; }
+}

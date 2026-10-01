@@ -1,0 +1,73 @@
+/* Navbar.css — FutureScape navigation bar*/
+
+.fs-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 28px;
+  background: #fffdf4;
+  border-bottom: 1px solid #E4D49E;
+  font-family: 'georgian', cursive;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.fs-brand {
+  font-family: 'georgian', cursive;
+  font-size: 22px;
+  color: #2C5A36;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+.fs-brand-icon {
+  font-size: 24px;
+}
+
+.fs-nav-links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.fs-nav-link {
+  font-family: 'georgian', cursive;
+  font-size: 15px;
+  color: #9A7B58;
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.fs-nav-link:hover {
+  color: #6B4A2E;
+  background: rgba(228, 212, 158, 0.25);
+}
+
+.fs-nav-link.active {
+  color: #2C5A36;
+  font-weight: 600;
+  background: rgba(44, 90, 54, 0.08);
+}
+
+@media (max-width: 600px) {
+  .fs-navbar {
+    padding: 0 14px;
+  }
+  .fs-nav-link {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+  .fs-brand {
+    font-size: 18px;
+  }
+}

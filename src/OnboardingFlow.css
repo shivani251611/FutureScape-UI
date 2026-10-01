@@ -1,0 +1,250 @@
+/* OnboardingFlow.css */
+
+.ob-root {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  font-family: 'georgian', cursive;
+  color: #6B4A2E;
+  background: radial-gradient(120% 95% at 50% 35%, #FBEFC6 0%, #F7E8B6 100%);
+}
+
+.ob-root * {
+  box-sizing: border-box;
+}
+
+.ob-root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(180,150,80,0.09) 1px, transparent 1.4px);
+  background-size: 26px 26px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* wordmark */
+.ob-wordmark {
+  position: absolute;
+  top: 26px;
+  left: 34px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 5;
+}
+
+.ob-leaf {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #EBD680;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  box-shadow: inset 0 0 0 1px rgba(150,120,50,0.25);
+}
+
+.ob-wordmark span {
+  font-family: 'georgian', cursive;
+  font-size: 26px;
+  color: #2C5A36;
+  letter-spacing: 0.3px;
+}
+
+/* stage */
+.ob-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+}
+
+.ob-deck {
+  position: relative;
+  width: min(720px, 86vw);
+  min-height: 400px;
+}
+
+/* steps */
+.ob-step {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.ob-step.ob-active {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* dots */
+.ob-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.ob-dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(150,120,50,0.30);
+  transition: all 0.45s ease;
+  font-style: normal;
+}
+
+.ob-dots i.on {
+  width: 26px;
+  border-radius: 6px;
+  background: #B27A52;
+}
+
+/* type */
+.ob-eyebrow {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #9A7B58;
+  margin: 0 0 10px;
+}
+
+.ob-root h1 {
+  font-family: 'georgian', cursive;
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.04;
+  margin: 0 0 16px;
+  color: #6B4A2E;
+}
+
+.ob-body {
+  font-style: italic;
+  font-size: clamp(16px, 1.7vw, 22px);
+  line-height: 1.55;
+  color: #9A7B58;
+  margin: 0 auto;
+  max-width: 30em;
+  text-wrap: pretty;
+}
+
+/* steps list */
+.ob-list {
+  list-style: none;
+  margin: 8px auto 0;
+  padding: 0;
+  max-width: 30em;
+  text-align: left;
+  display: grid;
+  gap: 14px;
+}
+
+.ob-list li {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 14px;
+  align-items: start;
+  font-style: italic;
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.45;
+  color: #9A7B58;
+}
+
+.ob-num {
+  font-family: 'georgian', cursive;
+  font-style: normal;
+  font-size: 22px;
+  color: #fff;
+  background: #B27A52;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-top: 2px;
+}
+
+/* nav */
+.ob-nav {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
+
+.ob-skip {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'georgian', cursive;
+  font-style: italic;
+  font-size: 15px;
+  color: #9A7B58;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  padding: 6px;
+}
+
+.ob-skip:hover {
+  color: #6B4A2E;
+}
+
+.ob-btn {
+  font-family: 'georgian', cursive;
+  font-size: 22px;
+  color: #fff;
+  background: #B27A52;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 12px 14px 11px 13px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #9A6644;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.ob-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #9A6644;
+}
+
+.ob-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #9A6644;
+}
+
+.ob-btn.ob-back {
+  background: transparent;
+  color: #9A7B58;
+  box-shadow: none;
+  padding: 12px 8px;
+}
+
+.ob-btn.ob-back:hover {
+  transform: none;
+  color: #6B4A2E;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ob-step {
+    transition: opacity 0.2s linear;
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .ob-deck { width: 90vw; }
+}
